@@ -21,8 +21,6 @@ public class Ex1 {
 
         }
 
-
-
     }
 
 }
