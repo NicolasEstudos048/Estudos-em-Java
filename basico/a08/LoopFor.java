@@ -26,9 +26,6 @@ public class LoopFor {
         for (int i = 1; i < 5; soma += i++);
         System.out.println(soma);
         
-
-
-
     }
 
 }
