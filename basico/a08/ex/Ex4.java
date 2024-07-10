@@ -8,17 +8,18 @@ public class Ex4 {
     
         Scanner scanner = new Scanner(System.in);
     
-        double paisA = 80000;
-        double paisB = 200000;
         int anos = 0;
+
+        System.out.print("Saldo inicial do país A: ");
+        int paisA = scanner.nextInt();
+
+        System.out.print("Saldo inicial do país B: ");
+        int paisB = scanner.nextInt();
 
         do {
             paisA = paisA + ((paisA * 3) / 100);
-
-            paisB = paisB + ((paisB * 1.5) / 100);
-
+            paisB = paisB + ((paisB* 3) / 100);
             anos++;
-
         } while (paisA < paisB);
 
         System.out.println(paisA);
@@ -26,6 +27,5 @@ public class Ex4 {
         System.out.println("Foram necessários " + anos + " anos para que o país A ultrapasse o país B.");
 
     }
-
 
 }
