@@ -12,7 +12,6 @@ public class Ex5 {
         double paisB;
         double taxaA;
         double taxaB;
-        int anos = 0;
 
         boolean valido = false;
         do { 
@@ -61,6 +60,8 @@ public class Ex5 {
             } else { System.out.println("Insira valido!"); }
             
         } while (!valido);
+
+        int anos = 0;
 
         while (paisA < paisB) {
             
