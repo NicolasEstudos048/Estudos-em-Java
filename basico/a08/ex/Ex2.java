@@ -19,6 +19,7 @@ public class Ex2 {
             if (nome.equalsIgnoreCase(senha)){
                 System.out.println("Senha incorreta!");
             } else {
+                System.out.println("Logado com sucesso!");
                 break;
             }
             
