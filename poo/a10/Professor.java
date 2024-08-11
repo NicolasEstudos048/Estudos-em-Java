@@ -23,4 +23,8 @@ public class Professor extends Pessoa{
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    public String toStringProf() {
+        return "Professor [especialidade=" + especialidade + ", salario=" + salario + "]";
+    }
 }

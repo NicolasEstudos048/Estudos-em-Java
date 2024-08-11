@@ -1,11 +1,11 @@
 package poo.a10;
 
-public class Pessoa {
+public abstract class Pessoa { // Classes abstract não podem ser instânciadas
     private String nome;
     private int idade;
     private String sexo;
 
-    public void fazerAniv(){
+    public final void fazerAniv(){ // Por ser final, não pode ser sobreposto, isso é, não pode ser alterado
         this.setIdade(this.getIdade() + 1);
     }
 

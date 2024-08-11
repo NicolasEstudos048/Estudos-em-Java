@@ -23,4 +23,8 @@ public class Funcionario extends Pessoa{
     public void setTrabalhando(boolean trabalhando) {
         this.trabalhando = trabalhando;
     }
+
+    public String toStringFuncio() {
+        return "Funcionario [setor=" + setor + ", trabalhando=" + trabalhando + "]";
+    }
 }
