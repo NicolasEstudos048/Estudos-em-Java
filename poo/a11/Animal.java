@@ -1,6 +1,6 @@
 package poo.a11;
 
-abstract class Animal {
+public abstract class Animal {
     protected double peso;
     protected int idade;
     protected int membros;
