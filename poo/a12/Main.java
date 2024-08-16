@@ -11,10 +11,16 @@ public class Main {
         a[0] = new Audiencia("Alice", 25, "F", "alice");
         a[1] = new Audiencia("Bob", 30, "M", "bob");
 
-        v[0].play();
-        v[0].like();
+        Visualizacao visu[] = new Visualizacao[3];
+        visu[0] = new Visualizacao(a[0], v[2]);
+        visu[0].avaliar();
+        System.out.println(visu[0].toString());
 
-        System.out.println(v[0].toString());
-        System.out.println(a[0].toString());
+        visu[1] = new Visualizacao(a[0], v[1]);
+        visu[1].avaliar(87.0);
+        System.out.println(visu[1].toString());
+
+        /*System.out.println(v[0].toString());
+        System.out.println(a[0].toString());*/
     }
 }
