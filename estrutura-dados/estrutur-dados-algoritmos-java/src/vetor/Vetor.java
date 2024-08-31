@@ -51,6 +51,25 @@ public class Vetor {
     }
 
     /*
+     * Maneira de adicionar o elemento em qualquer posição
+     * 
+     * Copia o elemento anterior na posição seguinte, para que seja posssível
+     * adicionar o elemento desejado na posição desejada sem perder nada
+     */
+    public Boolean adicionar(Integer posicao, String elemento) {
+        if (!(posicao >= 0 && posicao < this.getTamanho())) {
+            throw new IllegalArgumentException("Posição Inválida");
+        }
+        for (int i = this.getTamanho() - 1; i >= posicao; i--) {
+            this.elementos[i + 1] = this.getElementos()[i];
+        }
+        this.elementos[posicao] = elemento;
+        this.setTamanho(this.getTamanho() + 1);
+
+        return true;
+    }
+
+    /*
      * Faz a busca dentro do Array e traz somente o elemento da posição
      * Ele não mostra elementos null, retornando a exception
      * Caso a posição seja inválida, lança uma IllegalArgumentException com a
