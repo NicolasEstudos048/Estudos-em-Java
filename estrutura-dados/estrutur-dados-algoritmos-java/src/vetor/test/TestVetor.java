@@ -42,5 +42,17 @@ public class TestVetor {
 
         vetor2.adicionar(3, "D");
         System.out.println(vetor2);
+
+        System.out.println("----------------------------------------------------------");
+
+        Vetor vetor3 = new Vetor(3);
+        vetor3.adicionar("B");
+        vetor3.adicionar("C");
+        vetor3.adicionar("E");
+        vetor3.adicionar("F");
+        vetor3.adicionar("G");
+
+        System.out.println(vetor3);
+
     }
 }

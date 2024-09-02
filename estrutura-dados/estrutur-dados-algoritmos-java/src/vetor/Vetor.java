@@ -41,6 +41,7 @@ public class Vetor {
     // Maneira 3 com método adicionar retornando booleano
     // Retorna true caso adicionado com sucesso e false caso não haja espaço
     public boolean adicionar(String element) {
+        this.aumentaCapacidade();
         if (this.getTamanho() < this.getElementos().length) {
             this.elementos[this.tamanho] = element;
             this.setTamanho(this.getTamanho() + 1);
@@ -57,6 +58,7 @@ public class Vetor {
      * adicionar o elemento desejado na posição desejada sem perder nada
      */
     public Boolean adicionar(Integer posicao, String elemento) {
+        this.aumentaCapacidade();
         if (!(posicao >= 0 && posicao < this.getTamanho())) {
             throw new IllegalArgumentException("Posição Inválida");
         }
@@ -67,6 +69,22 @@ public class Vetor {
         this.setTamanho(this.getTamanho() + 1);
 
         return true;
+    }
+
+    /*
+     * Aumenta a capacidade do vetor se o tamanho limite ja estiver atingido
+     * 
+     * A única maneira de aumentar a capacidade é copiando o vetor em outro de
+     * tamnho maior
+     */
+    private void aumentaCapacidade() {
+        if (this.tamanho == this.elementos.length) {
+            String[] novoElemento = new String[this.elementos.length * 2]; // Dobra a capacidade
+            for (int i = 0; i < this.elementos.length; i++) {
+                novoElemento[i] = this.elementos[i];
+            }
+            this.elementos = novoElemento; // após clonado o vetor, faz os elementos receberem ele
+        }
     }
 
     /*
