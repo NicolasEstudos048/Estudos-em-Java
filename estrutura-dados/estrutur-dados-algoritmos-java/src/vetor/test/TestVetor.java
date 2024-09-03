@@ -54,5 +54,19 @@ public class TestVetor {
 
         System.out.println(vetor3);
 
+        vetor3.remove(1);
+        System.out.println(vetor3);
+
+        // Remove elemento que não sabe a posição buscando por esse elemento
+        int pos = vetor3.busca("F");
+        if (pos > -1) {
+            vetor3.remove(pos);
+        } else {
+            System.out.println("Elemento não existe");
+        }
+        System.out.println(vetor3);
+
+        // System.out.println(vetor3.busca(78));
+
     }
 }

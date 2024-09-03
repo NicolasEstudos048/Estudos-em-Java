@@ -59,9 +59,7 @@ public class Vetor {
      */
     public Boolean adicionar(Integer posicao, String elemento) {
         this.aumentaCapacidade();
-        if (!(posicao >= 0 && posicao < this.getTamanho())) {
-            throw new IllegalArgumentException("Posição Inválida");
-        }
+        validacao(posicao);
         for (int i = this.getTamanho() - 1; i >= posicao; i--) {
             this.elementos[i + 1] = this.getElementos()[i];
         }
@@ -88,15 +86,28 @@ public class Vetor {
     }
 
     /*
+     * Remove Elementos de qualquer posição
+     * 
+     * Para isso, sobreescreve o numero removido pelo número a sua frente, e faz
+     * isso para
+     * todas as posições que estão na frente que ainda não foram sobreescritas,
+     * ignora o
+     * ultimo numero
+     */
+    public void remove(int posicao) {
+        validacao(posicao);
+        for (int i = posicao; i < this.tamanho - 1; i++) {
+            this.elementos[i] = this.getElementos()[i + 1];
+        }
+        this.setTamanho(this.getTamanho() - 1);
+    }
+
+    /*
      * Faz a busca dentro do Array e traz somente o elemento da posição
      * Ele não mostra elementos null, retornando a exception
-     * Caso a posição seja inválida, lança uma IllegalArgumentException com a
-     * mensagem "Posição Inválida"
      */
     public String busca(int posicao) {
-        if (!(posicao >= 0 && posicao < this.getTamanho())) {
-            throw new IllegalArgumentException("Posição Inválida");
-        }
+        validacao(posicao);
         return this.getElementos()[posicao];
     }
 
@@ -112,6 +123,13 @@ public class Vetor {
             }
         }
         return -1;
+    }
+
+    // Aplica uma exception se a posição que foi passada for invalida
+    public void validacao(int posicao) {
+        if (!(posicao >= 0 && posicao < this.getTamanho())) {
+            throw new IllegalArgumentException("Posição Inválida");
+        }
     }
 
     public String[] getElementos() {
