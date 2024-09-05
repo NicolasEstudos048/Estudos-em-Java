@@ -72,10 +72,8 @@ public class Lista<T> {
      * Remove Elementos de qualquer posição
      * 
      * Para isso, sobreescreve o numero removido pelo número a sua frente, e faz
-     * isso para
-     * todas as posições que estão na frente que ainda não foram sobreescritas,
-     * ignora o
-     * ultimo numero
+     * isso para todas as posições que estão na frente que ainda não foram
+     * sobreescritas, ignora o ultimo numero
      */
     public void remove(int posicao) {
         validacao(posicao);
@@ -83,6 +81,13 @@ public class Lista<T> {
             this.elementos[i] = this.getElementos()[i + 1];
         }
         this.setTamanho(this.getTamanho() - 1);
+    }
+
+    public void remove(T elemento) {
+        int posicao = this.busca(elemento);
+        if (posicao > -1) {
+            this.remove(posicao);
+        }
     }
 
     /*
