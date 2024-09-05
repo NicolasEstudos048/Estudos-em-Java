@@ -108,6 +108,25 @@ public class Lista<T> {
         return -1;
     }
 
+    public boolean contem(T elemento) {
+        /*
+         * for(int i=0; i<this.getTamanho(); i++){
+         * if(this.getElementos()[i].equals(elemento)){
+         * return true;
+         * }
+         * }
+         * return false;
+         * 
+         * int pos = busca(elemento);
+         * if(pos > -1){
+         * return true;
+         * }
+         * return false;
+         */
+
+        return busca(elemento) > -1;
+    }
+
     // Aplica uma exception se a posição que foi passada for invalida
     public void validacao(int posicao) {
         if (!(posicao >= 0 && posicao < this.getTamanho())) {
