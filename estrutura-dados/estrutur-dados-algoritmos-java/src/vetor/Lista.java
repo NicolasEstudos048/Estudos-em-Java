@@ -90,11 +90,15 @@ public class Lista<T> {
         }
     }
 
+    public T obtem(int posicao) {
+        return this.busca(posicao);
+    }
+
     /*
      * Faz a busca dentro do Array e traz somente o elemento da posição
      * Ele não mostra elementos null, retornando a exception
      */
-    public Object busca(int posicao) {
+    public T busca(int posicao) {
         validacao(posicao);
         return this.getElementos()[posicao];
     }
@@ -104,7 +108,7 @@ public class Lista<T> {
      * 
      * Vai de posição em posição no vetor, e verifica se é o elemento procurado
      */
-    public Integer busca(T elemento) {
+    public int busca(T elemento) {
         for (int i = 0; i < this.getTamanho(); i++) {
             if (this.getElementos()[i].equals(elemento)) {
                 return i;
