@@ -127,6 +127,15 @@ public class Lista<T> {
         return busca(elemento) > -1;
     }
 
+    public int ultimoIndice(T elemento) {
+        for (int i = this.getTamanho() - 1; i >= 0; i--) {
+            if (this.getElementos()[i].equals(elemento)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     // Aplica uma exception se a posição que foi passada for invalida
     public void validacao(int posicao) {
         if (!(posicao >= 0 && posicao < this.getTamanho())) {
