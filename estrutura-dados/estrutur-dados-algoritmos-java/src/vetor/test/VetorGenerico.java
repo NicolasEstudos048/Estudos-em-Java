@@ -23,5 +23,8 @@ public class VetorGenerico {
 
         vetor.remove("Elemento1"); // Remove do ArrayList onde passa o proprio elemento como paramentro
         System.out.println(vetor);
+
+        vetor.limpar();
+        System.out.println(vetor); // Semelhante ao clear() do ArrayList
     }
 }

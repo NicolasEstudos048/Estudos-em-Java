@@ -152,6 +152,25 @@ public class Lista<T> {
         }
     }
 
+    /*
+     * Limpar tudo
+     * 
+     * Vai limpar tudo dentro do Array, semelhante ao clear() do ArrayList
+     */
+    public void limpar() {
+        // Opção 1
+        // this.elementos = (T[]) new Object[this.elementos.length];
+
+        // Opção 2
+        // this.setTamanho(0);
+
+        // Opção 3
+        for (int i = 0; i < this.getTamanho(); i++) {
+            this.elementos[i] = null;
+        }
+        this.setTamanho(0);
+    }
+
     public T[] getElementos() {
         return elementos;
     }
