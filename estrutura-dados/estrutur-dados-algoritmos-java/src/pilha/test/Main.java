@@ -11,8 +11,12 @@ public class Main {
         }
 
         System.out.println(pilha);
+
         System.out.println(pilha.getTamanho());
         System.out.println(pilha.estaVazia()); // isEmpty()
         System.out.println(pilha.topo()); // Peek
+        System.out.println(pilha.desempilha()); // Pop
+
+        System.out.println(pilha);
     }
 }
