@@ -9,14 +9,17 @@ public class EstruturaEstatica<T> {
         tamanho = 0;
     }
 
+    // Começa com 10 de capacidade
     public EstruturaEstatica() {
         this(10);
     }
 
+    // Retorna boolean se estiver vazia
     public boolean estaVazia() { // isEmpty()
         return this.tamanho == 0;
     }
 
+    // Adiciona elemento
     protected boolean adicionar(T element) {
         this.aumentaCapacidade();
         if (this.getTamanho() < this.getElementos().length) {
@@ -28,6 +31,7 @@ public class EstruturaEstatica<T> {
         return false;
     }
 
+    // Adiciona elemento na posição desejada
     protected Boolean adicionar(Integer posicao, T elemento) {
         validacao(posicao);
         this.aumentaCapacidade();
@@ -40,6 +44,7 @@ public class EstruturaEstatica<T> {
         return true;
     }
 
+    // Remove elemento na posição desejada
     protected void remove(int posicao) {
         validacao(posicao);
         for (int i = posicao; i < this.tamanho - 1; i++) {
@@ -48,6 +53,7 @@ public class EstruturaEstatica<T> {
         this.tamanho += 1;
     }
 
+    // Aumenta automaticamente a capacidade do Vetor
     protected void aumentaCapacidade() {
         if (this.tamanho == this.elementos.length) {
             T[] novoElemento = (T[]) new Object[this.elementos.length * 2];
