@@ -7,10 +7,11 @@ public class Main {
         Pilha<Integer> pilha = new Pilha<>();
 
         for (int i = 0; i <= 10; i++) {
-            pilha.empilha(i);
+            pilha.empilha(i); // Push
         }
 
         System.out.println(pilha);
         System.out.println(pilha.getTamanho());
+        System.out.println(pilha.estaVazia()); // isEmpty()
     }
 }
