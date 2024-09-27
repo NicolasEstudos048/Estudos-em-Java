@@ -50,7 +50,7 @@ public class EstruturaEstatica<T> {
         for (int i = posicao; i < this.tamanho - 1; i++) {
             this.elementos[i] = this.getElementos()[i + 1];
         }
-        this.tamanho += 1;
+        this.tamanho -= 1;
     }
 
     // Aumenta automaticamente a capacidade do Vetor
